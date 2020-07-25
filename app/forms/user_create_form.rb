@@ -1,19 +1,22 @@
 class UserCreateForm < User
   include ActiveFormModel
 
-  # list all the permitted params
   permit :name, :adress, :role_id
 
-  # add validation if necessary
-  # they will be merged with base class' validation
-  validate :password, presence: true
+  validates_presence_of :name, :email, :address
+  validates_confirmation_of :email, on: :create
+  validates_acceptance_of :terms_agreed, on: :create
+  validates_presence_of :profession, :workplace, if: :admin?
 
-  # optional data normalization
-  def email=(email)
-    if email.present?
-      write_attribute(:email, email.downcase)
-    else
-      super
-    end
+  def name=(value)
+    self[:name] = value.downcase
+  end
+
+  def email=(value)
+    self[:email] = value.downcase
+  end
+
+  def role_id=(value)
+    self[:role_id] = value || Role.general.id
   end
 end
