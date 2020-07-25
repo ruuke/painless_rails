@@ -343,3 +343,138 @@ Migrating to CreateRoles (20200725070442)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
   [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" ORDER BY "roles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "general"], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "terms_agreed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "a"], ["terms_agreed", 1], ["created_at", "2020-07-25 07:54:49.936401"], ["updated_at", "2020-07-25 07:54:49.936401"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "terms_agreed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "a"], ["terms_agreed", 1], ["created_at", "2020-07-25 07:55:52.385378"], ["updated_at", "2020-07-25 07:55:52.385378"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role_id", "terms_agreed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "a"], ["role_id", 1], ["terms_agreed", 1], ["created_at", "2020-07-25 07:56:05.929636"], ["updated_at", "2020-07-25 07:56:05.929636"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRoles (20200725070442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "general"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "entity"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "roles"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200725070442"]]
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200725064527)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200725064527"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200725064527)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200725064527_create_users.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "address" varchar, "email" varchar NOT NULL, "role_id" integer, "terms_agreed" boolean NOT NULL, "profession" varchar, "workplace" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200725064527_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200725064527"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRoles (20200725070442)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200725070442_create_roles.rb:3
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "general"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Create (0.3ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "general"], ["created_at", "2020-07-25 11:56:34.411229"], ["updated_at", "2020-07-25 11:56:34.411229"]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "entity"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Create (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "entity"], ["created_at", "2020-07-25 11:56:34.416595"], ["updated_at", "2020-07-25 11:56:34.416595"]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mRole Create (0.2ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2020-07-25 11:56:34.424230"], ["updated_at", "2020-07-25 11:56:34.424230"]]
+  ↳ db/seeds/roles.rb:1
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200725070442"]]
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateCompanies (20200725114451)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar, "title" varchar, "owner_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200725114451_create_companies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200725114451"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddCompanyToUsers (20200725115711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "company_id" integer NOT NULL[0m
+  ↳ db/migrate/20200725115711_add_company_to_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (9.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddCompanyToUsers (20200725115711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "users" ADD "company_id" integer NOT NULL[0m
+  ↳ db/migrate/20200725115711_add_company_to_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddCompanyToUsers (20200725115711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "company_id" integer[0m
+  ↳ db/migrate/20200725115711_add_company_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200725115711"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
